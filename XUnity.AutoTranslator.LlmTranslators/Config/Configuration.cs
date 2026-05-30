@@ -88,7 +88,7 @@ public static class Configuration
         if (!File.Exists(file))
             return;
 
-        config.SystemPrompt = File.ReadAllText(file, Encoding.UTF8);
+        config.GlossaryPrompt = File.ReadAllText(file, Encoding.UTF8);
     }
 
     public static void LoadApiKey(LlmConfig config, string file)

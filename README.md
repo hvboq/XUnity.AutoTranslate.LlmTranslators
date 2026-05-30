@@ -7,6 +7,8 @@ Current supported plugins include:
 	- Probably the most popular LLM that has the highest quality but is not Free
 - [Ollama Models](https://ollama.com/)
 	- Ollama is a local hosting option for LLMs. You are able to run one or more llms on your local machine of varying size. This option is free but will require you to engineer your prompts dependant on the model and/or language.
+- [LM Studio](https://lmstudio.ai/)
+	- LM Studio is a local hosting option for OpenAI-compatible chat completion APIs. Start the local server in LM Studio and use the model id shown by LM Studio in `LmStudio.yaml`.
 
 # Why use this instead of the [Custom] endpoint?
 
@@ -33,6 +35,7 @@ To configure your LLM you will need to follow the following steps:
 2. Open the config for the LLMTranslator you wish to use
 	- If OpenaI: `OpenAi.Yml`
 	- If a local Olama LLM: `Ollama.Yml`
+	- If a local LM Studio LLM: `LmStudio.Yml`
 3. Update your config with any API keys, custom urls, glossaries and system prompts.
 4. Finally update your AutoTranslator INI file with your translate service
 	- ```
@@ -42,6 +45,7 @@ To configure your LLM you will need to follow the following steps:
 	  ```
 	- If OpenAi: `OpenAiTranslate`
 	- If a local Olama LLM: `OllamaTranslate`
+	- If a local LM Studio LLM: `LmStudioTranslate`
 
 ## Global API Key
 
@@ -55,11 +59,11 @@ We also use global environment variables so you can just set your API Key once a
 We have seperate files that can be override any config you have loaded in your config file. This makes it easier to publish game specific prompts, glossaries or just make it easier to use multi line prompts without having to worry about YAML formatting.
 
 These files are:
-  - `OpenAi-SystemPrompt.txt` or `Ollama-SystemPrompt.txt`
+  - `OpenAi-SystemPrompt.txt`, `Ollama-SystemPrompt.txt` or `LmStudio-SystemPrompt.txt`
 	- Use this file to update your system prompt
-  - `OpenAi-GlossaryPrompt.txt` or `Ollama-GlossaryPrompt.txt`
+  - `OpenAi-GlossaryPrompt.txt`, `Ollama-GlossaryPrompt.txt` or `LmStudio-GlossaryPrompt.txt`
 	- Use this file to update your glossary prompt
-  - `OpenAi-ApiKey.txt` or `Ollama-ApiKey.txt`
+  - `OpenAi-ApiKey.txt`, `Ollama-ApiKey.txt` or `LmStudio-ApiKey.txt`
 	- Use this file to update your API Key
 
 # Glossary
