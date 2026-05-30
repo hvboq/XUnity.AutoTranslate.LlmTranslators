@@ -47,6 +47,31 @@ To configure your LLM you will need to follow the following steps:
 	- If a local Olama LLM: `OllamaTranslate`
 	- If a local LM Studio LLM: `LmStudioTranslate`
 
+## LM Studio
+
+To use LM Studio, start the local server in LM Studio and load the model you want to use for translation. The default LM Studio OpenAI-compatible chat completion URL is:
+
+```yaml
+url: "http://localhost:1234/v1/chat/completions"
+```
+
+Copy `LmStudio.yaml` into your AutoTranslator config folder, then update the `model` value to the model identifier shown by LM Studio:
+
+```yaml
+apiKey: "None"
+apiKeyRequired: false
+url: "http://localhost:1234/v1/chat/completions"
+model: "model-identifier"
+```
+
+Finally, set the translator endpoint in `Config.ini`:
+
+```ini
+[Service]
+Endpoint=LmStudioTranslate
+FallbackEndpoint=
+```
+
 ## Global API Key
 
 We also use global environment variables so you can just set your API Key once and never have to think about it again.
